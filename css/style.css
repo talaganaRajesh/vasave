@@ -1,0 +1,621 @@
+/* 
+ * VASAVE CAFE - Redesign v3.0
+ * Theme: Modern Coffee Shop (Warm Beige, Deep Brown, Orange Accents)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Color Palette */
+    --bg-cream: #F9F5F0;
+    /* Lightest beige for main background */
+    --bg-card: #FFFFFF;
+    /* White for cards */
+    --bg-dark: #2C1A16;
+    /* Deep Coffee Brown for sections */
+
+    --primary-brown: #3E2723;
+    /* Main Heading Color */
+    --primary-color: var(--primary-brown); /* alias for legacy code that used --primary-color */
+    --text-body: #5D4037;
+    /* Softer brown for body text */
+    --text-muted: #8D6E63;
+
+    --accent-orange: #C7824B;
+    /* Buttons / Highlights */
+    --accent-gold: #D4A574;
+
+    /* Spacing */
+    --container-width: 1200px;
+    --section-pad: 100px;
+
+    /* Fonts */
+    --font-heading: 'DM Serif Display', serif;
+    --font-body: 'Outfit', sans-serif;
+
+    /* Effects */
+    --shadow-sm: 0 4px 20px rgba(62, 39, 35, 0.08);
+    --shadow-md: 0 10px 40px rgba(62, 39, 35, 0.12);
+    --radius-lg: 24px;
+    --radius-btn: 50px;
+
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-cream);
+    color: var(--text-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--font-heading);
+    color: var(--primary-brown);
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: var(--section-pad) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-dark {
+    background-color: var(--bg-dark);
+    color: white;
+}
+
+.mb-2 {
+    margin-bottom: 16px;
+}
+
+.mb-4 {
+    margin-bottom: 32px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: var(--radius-btn);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-brown);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-orange);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--primary-brown);
+    border: 1px solid var(--primary-brown);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-cream);
+}
+
+.btn-accent {
+    background-color: var(--accent-orange);
+    color: white;
+}
+
+.btn-accent:hover {
+    background-color: var(--primary-brown);
+}
+
+/* Header */
+header {
+    padding: 24px 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--primary-brown);
+}
+
+.nav-links a:hover {
+    color: var(--accent-orange);
+}
+
+/* Hero Section */
+.hero {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 60% 50%, #EFE5D9 0%, #F9F5F0 60%);
+}
+
+.hero-content h1 {
+    margin-bottom: 24px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    border-radius: 50%;
+    /* Just in case we want a circle, though design is a cup */
+    max-height: 600px;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Steam Animation */
+.steam-container {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.6;
+}
+
+/* Features Section */
+.features-section {
+    background-color: white;
+    border-radius: 40px 40px 0 0;
+    margin-top: -60px;
+    z-index: 10;
+    padding-top: 80px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 24px;
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    width: 120px;
+    height: 120px;
+    /* Reduced specific size so it fits well */
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-gold);
+    box-shadow: var(--shadow-sm);
+}
+
+.feature-icon img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+/* Why Choose Us (Dark Section) */
+.why-us {
+    background-color: var(--bg-dark);
+    color: white;
+    border-radius: 40px;
+    margin: 20px;
+}
+
+.why-us h2,
+.why-us h3 {
+    color: white;
+}
+
+.why-us p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.why-us-img img {
+    border-radius: var(--radius-lg);
+}
+
+/* Promo Section */
+.promo-section {
+    background-color: #EFEBE7;
+}
+
+.promo-badge {
+    display: inline-block;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--accent-orange);
+}
+
+/* Footer */
+footer {
+    background-color: #F5EFE9;
+    padding: 60px 0;
+    border-top: 1px solid #E0E0E0;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-family: var(--font-heading);
+    color: var(--primary-brown);
+    margin-bottom: 20px;
+}
+
+/* Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease-out;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile */
+@media(max-width: 900px) {
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .hero {
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    .hero-content {
+        margin-bottom: 40px;
+    }
+
+    .hero-content p {
+        margin: 0 auto 30px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* Hide for now, needs hamburger */
+    .feature-icon {
+        width: 100px;
+        height: 100px;
+    }
+}
+/* Product Detail - layout and components for product page */
+/* Reduce vertical padding for product pages for a cleaner layout */
+.product-section { padding: 60px 0; }
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Ensure reveal blocks behave as normal grid children */
+.about-grid .reveal {
+    display: block;
+}
+
+/* Contact form: constrain width and center vertically in grid */
+.contact-form-container {
+    max-width: 720px;
+    align-self: center;
+}
+
+/* Standardize images used in the locations/about grid for consistent sizing and rounded corners */
+.about-grid img {
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+/* Constrain the hero image so it visually matches the left column */
+.about-hero-img {
+    width: 100%;
+    max-height: 520px; /* keeps image from becoming taller than content */
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 1100px) {
+    .about-hero-img {
+        max-height: 420px;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-hero-img {
+        max-height: 360px;
+    }
+}
+
+/* Image styling */
+#detail-img {
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    max-height: 520px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Product details */
+#product-detail h1,
+#product-detail #detail-name {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+}
+
+#product-detail #detail-price {
+    font-size: 1.8rem;
+    color: var(--primary-brown);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+#product-detail #detail-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* Quantity and controls */
+.btn-outline {
+    border: 1px solid #e6e6e6;
+    background: white;
+    color: var(--primary-brown);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 10px 14px;
+}
+
+#qty-input {
+    width: 64px;
+    border: 1px solid #eee;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Add to order button tweaks */
+#add-to-cart-btn {
+    margin-top: 18px;
+    padding: 14px 18px;
+    border-radius: 12px;
+}
+
+/* Small meta row */
+#product-detail .meta-row {
+    margin-top: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    color: var(--text-muted);
+}
+
+/* Responsive adjustments */
+@media(max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* Make about-grid images collapse to natural height on small screens */
+    .about-grid img {
+        height: auto;
+    }
+
+    #detail-img {
+        max-height: 400px;
+    }
+
+    #product-detail h1 {
+        font-size: 2.2rem;
+    }
+}
+/* Menu Card (Legacy/Menu Page Support) */
+.menu-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.menu-card-img {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.menu-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.menu-card:hover .menu-card-img img {
+    transform: scale(1.05);
+}
+
+.menu-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+/* Contact Form Styles */
+.contact-form input,
+.contact-form textarea {
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-orange) !important;
+    box-shadow: 0 0 0 3px rgba(199, 130, 75, 0.1);
+}
+
+/* Hover effects for feature cards */
+.hover-float {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-float:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Background color utilities */
+.bg-cream {
+    background-color: var(--bg-cream);
+}

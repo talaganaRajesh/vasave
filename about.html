@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Vasave Cafe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container flex-between">
+            <a href="index.html" class="logo"
+                style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--primary-brown);">
+                <i class="fa-solid fa-mug-hot" style="margin-right: 8px;"></i>Vasave
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">Our Story</a>
+                <a href="locations.html">Locations</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions flex-center" style="gap: 20px;">
+                <a href="cart.html" style="position: relative; color: var(--primary-brown); font-size: 1.2rem;">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-count"
+                        style="position: absolute; top: -5px; right: -8px; background: var(--accent-orange); color: white; border-radius: 50%; width: 16px; height: 16px; font-size: 10px; display: flex; align-items: center; justify-content: center;">0</span>
+                </a>
+                <a href="menu.html" class="btn btn-primary" style="padding: 10px 24px;">Order Now</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="hamburger" style="display: none; font-size: 1.5rem; cursor: pointer;">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header with Light Background -->
+    <section class="section"
+        style="padding-top: 140px; padding-bottom: 80px; background: linear-gradient(135deg, #F9F5F0 0%, #EFEBE7 100%); min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.05; background: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1920&q=80') center/cover;"></div>
+        <div style="position: relative; z-index: 2; padding: 40px;">
+            <h5 style="color: var(--accent-orange); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;">About Us</h5>
+            <h1 style="margin-bottom: 16px;">Our Heritage</h1>
+            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Crafting legacy, one cup at a time.</p>
+        </div>
+    </section>
+
+    <!-- Main Story -->
+    <section class="section">
+        <div class="container">
+            <div class="about-grid" style="align-items: start;">
+                <div class="reveal fade-in-left">
+                    <h5 style="color: var(--accent-orange); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;">The Beginning</h5>
+                    <h2 style="margin-bottom: 24px;">Born From A Passion<br>For Perfection.</h2>
+                    <p style="margin-bottom: 20px; line-height: 1.8; color: var(--text-body);">Vasave Cafe wasn't just built; it was curated. Founded in 2015 by two childhood friends, Rahul
+                        and Arjun, who spent years backpacking through the coffee plantations of Coorg and Chikmagalur.
+                    </p>
+                    <p style="margin-bottom: 20px; line-height: 1.8; color: var(--text-body);">They realized that despite India being a major coffee producer, the local cafe culture was
+                        missing the authentic, farm-to-cup connection. They set out to change that.</p>
+                    <p style="line-height: 1.8; color: var(--text-body);">What started as a small 400 sq. ft. outlet in Indiranagar has now grown into a sanctuary for
+                        coffee lovers, digital nomads, and artists.</p>
+                </div>
+                <div class="reveal fade-in-right">
+                    <img class="about-hero-img" src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80"
+                        alt="Coffee Shop Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section bg-cream">
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: 60px;">
+                <h5 style="color: var(--accent-orange); letter-spacing: 2px; text-transform: uppercase;">Milestones</h5>
+                <h2 style="margin-top: 12px;">Our Journey So Far</h2>
+            </div>
+
+            <div
+                style="position: relative; max-width: 800px; margin: 0 auto; border-left: 3px solid var(--accent-orange); padding-left: 50px;">
+                <!-- Item 1 -->
+                <div class="reveal hover-float" style="margin-bottom: 50px; position: relative;">
+                    <div
+                        style="position: absolute; left: -52px; top: 0; width: 20px; height: 20px; background: var(--accent-orange); border-radius: 50%; border: 4px solid var(--bg-cream);">
+                    </div>
+                    <span style="font-weight: 700; color: var(--accent-orange); font-size: 1.1rem;">2015</span>
+                    <h3 style="margin: 10px 0 12px 0; font-size: 1.8rem;">The First Brew</h3>
+                    <p style="color: var(--text-body); line-height: 1.7;">We opened our doors in Bangalore with a single espresso machine and a dream.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="reveal hover-float" style="margin-bottom: 50px; position: relative;">
+                    <div
+                        style="position: absolute; left: -52px; top: 0; width: 20px; height: 20px; background: white; border: 4px solid var(--accent-orange); border-radius: 50%;">
+                    </div>
+                    <span style="font-weight: 700; color: var(--accent-orange); font-size: 1.1rem;">2018</span>
+                    <h3 style="margin: 10px 0 12px 0; font-size: 1.8rem;">Roastery Launch</h3>
+                    <p style="color: var(--text-body); line-height: 1.7;">Started our own micro-roastery to have full control over the bean roasting profile.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="reveal hover-float" style="margin-bottom: 50px; position: relative;">
+                    <div
+                        style="position: absolute; left: -52px; top: 0; width: 20px; height: 20px; background: white; border: 4px solid var(--accent-orange); border-radius: 50%;">
+                    </div>
+                    <span style="font-weight: 700; color: var(--accent-orange); font-size: 1.1rem;">2021</span>
+                    <h3 style="margin: 10px 0 12px 0; font-size: 1.8rem;">Sustainable Initiative</h3>
+                    <p style="color: var(--text-body); line-height: 1.7;">Went 100% plastic-free and partnered with eco-friendly farms.</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="reveal hover-float" style="margin-bottom: 0; position: relative;">
+                    <div
+                        style="position: absolute; left: -52px; top: 0; width: 20px; height: 20px; background: white; border: 4px solid var(--accent-orange); border-radius: 50%;">
+                    </div>
+                    <span style="font-weight: 700; color: var(--accent-orange); font-size: 1.1rem;">2024</span>
+                    <h3 style="margin: 10px 0 12px 0; font-size: 1.8rem;">Vasave 2.0</h3>
+                    <p style="color: var(--text-body); line-height: 1.7;">Expanded to 5 locations across the city, keeping the soul intact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Values -->
+    <section class="section bg-dark text-center">
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: 60px;">
+                <h5 style="color: var(--accent-orange); letter-spacing: 2px; text-transform: uppercase;">Our Values</h5>
+                <h2 style="margin-top: 12px; color: white;">What We Stand For</h2>
+            </div>
+            <div class="grid-3">
+                <div class="reveal" style="padding: 40px 30px; background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+                    <i class="fa-solid fa-earth-americas"
+                        style="font-size: 3.5rem; color: var(--accent-orange); margin-bottom: 24px; display: block;"></i>
+                    <h3 style="color: white; margin-bottom: 16px; font-size: 1.6rem;">Ethical Sourcing</h3>
+                    <p style="color: #ccc; line-height: 1.7;">We pay 20% above Fair Trade prices to our partner farmers.</p>
+                </div>
+                <div class="reveal" style="padding: 40px 30px; background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+                    <i class="fa-solid fa-seedling"
+                        style="font-size: 3.5rem; color: var(--accent-orange); margin-bottom: 24px; display: block;"></i>
+                    <h3 style="color: white; margin-bottom: 16px; font-size: 1.6rem;">Zero Waste</h3>
+                    <p style="color: #ccc; line-height: 1.7;">All our coffee grounds are composted and packaging is biodegradable.</p>
+                </div>
+                <div class="reveal" style="padding: 40px 30px; background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+                    <i class="fa-solid fa-users"
+                        style="font-size: 3.5rem; color: var(--accent-orange); margin-bottom: 24px; display: block;"></i>
+                    <h3 style="color: white; margin-bottom: 16px; font-size: 1.6rem;">Community First</h3>
+                    <p style="color: #ccc; line-height: 1.7;">We host weekly art workshops and music gigs for local talent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="grid-4" style="margin-bottom: 50px;">
+                <div>
+                    <h3 class="footer-logo">Vasave Cafe</h3>
+                    <p style="font-size: 0.9rem;">Brewing memories, one cup at a time.</p>
+                </div>
+                <div>
+                    <h4>Links</h4>
+                    <ul style="opacity: 0.8; font-size: 0.95rem;">
+                        <li class="mb-2"><a href="#">Home</a></li>
+                        <li class="mb-2"><a href="#">Menu</a></li>
+                        <li class="mb-2"><a href="#">Our Story</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul style="opacity: 0.8; font-size: 0.95rem;">
+                        <li class="mb-2">123 Coffee St, Bangalore</li>
+                        <li class="mb-2">hello@vasave.com</li>
+                        <li class="mb-2">+91 98765 43210</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Social</h4>
+                    <div style="display: flex; gap: 16px; font-size: 1.2rem;">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center"
+                style="border-top: 1px solid #ccc; padding-top: 20px; font-size: 0.8rem; opacity: 0.6;">
+                &copy; 2024 Vasave Cafe. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

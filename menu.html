@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Vasave Cafe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container flex-between">
+            <a href="index.html" class="logo"
+                style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--primary-brown);">
+                <i class="fa-solid fa-mug-hot" style="margin-right: 8px;"></i>Vasave
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">Our Story</a>
+                <a href="locations.html">Locations</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions flex-center" style="gap: 20px;">
+                <a href="cart.html" style="position: relative; color: var(--primary-brown); font-size: 1.2rem;">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-count"
+                        style="position: absolute; top: -5px; right: -8px; background: var(--accent-orange); color: white; border-radius: 50%; width: 16px; height: 16px; font-size: 10px; display: flex; align-items: center; justify-content: center;">0</span>
+                </a>
+                <a href="menu.html" class="btn btn-primary" style="padding: 10px 24px;">Order Now</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="hamburger" style="display: none; font-size: 1.5rem; cursor: pointer;">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section"
+        style="background: url('https://images.unsplash.com/photo-1497515114629-f71d768fd61c?auto=format&fit=crop&w=1920&q=80') center/cover; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+        <div style="background: rgba(0,0,0,0.5); padding: 50px; backdrop-filter: blur(2px);">
+            <h1 style="color: white; margin-bottom: 20px;">Seasonal Menu</h1>
+            <p style="color: #eee; font-size: 1.2rem;">Handcrafted beverages and chef-curated eats.</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="section">
+        <div class="container">
+
+            <!-- Category Filters -->
+            <div class="text-center reveal" style="margin-bottom: 50px;">
+                <div style="display: inline-flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                    <button class="btn btn-outline filter-btn active" data-category="all"
+                        style="border-radius: 50px; padding: 12px 30px;">All</button>
+                    <button class="btn btn-outline filter-btn" data-category="coffee"
+                        style="border-radius: 50px; padding: 12px 30px;">Coffee</button>
+                    <button class="btn btn-outline filter-btn" data-category="pastry"
+                        style="border-radius: 50px; padding: 12px 30px;">Bakery</button>
+                    <button class="btn btn-outline filter-btn" data-category="food"
+                        style="border-radius: 50px; padding: 12px 30px;">Kitchen</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Loading Grid -->
+            <div class="grid-3" id="menu-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px;">
+                <!-- Content via JS -->
+                <div class="text-center" style="width: 100%; grid-column: 1/-1; padding: 100px 0;">
+                    <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; color: var(--primary-color);"></i>
+                    <p style="margin-top: 20px;">Loading fresh menu...</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Signature Promo -->
+    <section class="section"
+        style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1920&q=80') center/cover; padding: 120px 0;">
+        <div class="container text-center">
+            <h5 style="color: var(--accent-gold); letter-spacing: 2px;">Chef's Special</h5>
+            <h2 style="color: white; margin-bottom: 40px;">The Vasave Big Breakfast</h2>
+            <div
+                style="max-width: 800px; margin: 0 auto; position: relative; height: 300px; display: flex; align-items: center; justify-content: center;">
+                <div
+                    style="background: white; padding: 40px; border-radius: 8px; text-align: left; box-shadow: var(--shadow-hover); max-width: 350px; position: relative; z-index: 2;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 10px; color: var(--primary-brown);">Full English</h3>
+                    <p style="font-size: 1rem; margin-bottom: 20px; color: var(--text-body);">Eggs, sausages, beans,
+                        mushrooms, hash browns,
+                        and sourdough toast.</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-size: 1.5rem; font-weight: 700; color: var(--accent-orange);">$14.50</span>
+                        <a href="#" class="btn btn-primary" style="padding: 10px 24px;">ADD</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="grid-4" style="margin-bottom: 50px;">
+                <div>
+                    <h3 class="footer-logo">Vasave Cafe</h3>
+                    <p style="font-size: 0.9rem;">Brewing memories, one cup at a time.</p>
+                </div>
+                <div>
+                    <h4>Links</h4>
+                    <ul style="opacity: 0.8; font-size: 0.95rem;">
+                        <li class="mb-2"><a href="#">Home</a></li>
+                        <li class="mb-2"><a href="#">Menu</a></li>
+                        <li class="mb-2"><a href="#">Our Story</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul style="opacity: 0.8; font-size: 0.95rem;">
+                        <li class="mb-2">123 Coffee St, Bangalore</li>
+                        <li class="mb-2">hello@vasave.com</li>
+                        <li class="mb-2">+91 98765 43210</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Social</h4>
+                    <div style="display: flex; gap: 16px; font-size: 1.2rem;">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center"
+                style="border-top: 1px solid #ccc; padding-top: 20px; font-size: 0.8rem; opacity: 0.6;">
+                &copy; 2024 Vasave Cafe. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

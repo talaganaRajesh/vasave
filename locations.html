@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Locations | Vasave Cafe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container flex-between">
+            <a href="index.html" class="logo"
+                style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--primary-brown);">
+                <i class="fa-solid fa-mug-hot" style="margin-right: 8px;"></i>Vasave
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">Our Story</a>
+                <a href="locations.html">Locations</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions flex-center" style="gap: 20px;">
+                <a href="cart.html" style="position: relative; color: var(--primary-brown); font-size: 1.2rem;">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-count"
+                        style="position: absolute; top: -5px; right: -8px; background: var(--accent-orange); color: white; border-radius: 50%; width: 16px; height: 16px; font-size: 10px; display: flex; align-items: center; justify-content: center;">0</span>
+                </a>
+                <a href="menu.html" class="btn btn-primary" style="padding: 10px 24px;">Order Now</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="hamburger" style="display: none; font-size: 1.5rem; cursor: pointer;">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section" style="padding-top: 140px; padding-bottom: 80px; background: linear-gradient(135deg, #F9F5F0 0%, #EFEBE7 100%); min-height: 50vh; display: flex; align-items: center;">
+        <div class="container text-center">
+            <h5 style="color: var(--accent-orange); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;">Find Us</h5>
+            <h1 style="margin-bottom: 20px;">Our Locations</h1>
+            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Visit any of our five carefully curated spaces across Bangalore. Each location offers the same exceptional coffee with its own unique character.</p>
+        </div>
+    </section>
+
+    <!-- Locations Grid -->
+    <section class="section">
+        <div class="container">
+            
+            <!-- Location 1: Indiranagar (Flagship) -->
+            <div class="about-grid reveal" style="margin-bottom: 100px; align-items: center;">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=800&q=80" 
+                         alt="Indiranagar Location" 
+                         style="border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); width: 100%; height: 450px; object-fit: cover;">
+                </div>
+                <div style="padding-left: 20px;">
+                    <span style="display: inline-block; background: var(--accent-orange); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px;">FLAGSHIP STORE</span>
+                    <h2 style="margin-bottom: 16px;">Indiranagar</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px;">Our original café where it all began. A cozy two-story space with vintage interiors, a roastery on display, and our signature terrace seating.</p>
+                    
+                    <div style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-location-dot" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">123 Coffee Street, Indiranagar, Bangalore 560038</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-phone" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">+91 98765 43210</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 24px;">
+                        <i class="fa-solid fa-clock" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">Mon-Fri: 7:00 AM - 10:00 PM | Sat-Sun: 8:00 AM - 11:00 PM</span>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-wifi" style="margin-right: 6px;"></i>Free WiFi</span>
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-wheelchair" style="margin-right: 6px;"></i>Accessible</span>
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-square-parking" style="margin-right: 6px;"></i>Parking</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location 2: Koramangala -->
+            <div class="about-grid reveal" style="margin-bottom: 100px; align-items: center;">
+                <div style="padding-right: 20px; order: 1;">
+                    <h2 style="margin-bottom: 16px;">Koramangala</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px;">Modern minimalist design meets artisan coffee. This location features floor-to-ceiling windows, communal tables perfect for co-working, and a curated book exchange corner.</p>
+                    
+                    <div style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-location-dot" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">45 Forum Mall Road, Koramangala, Bangalore 560095</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-phone" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">+91 98765 43211</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 24px;">
+                        <i class="fa-solid fa-clock" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">Daily: 7:30 AM - 10:30 PM</span>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-wifi" style="margin-right: 6px;"></i>Free WiFi</span>
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-plug" style="margin-right: 6px;"></i>Power Outlets</span>
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-book" style="margin-right: 6px;"></i>Book Exchange</span>
+                    </div>
+                </div>
+                <div style="order: 2;">
+                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80" 
+                         alt="Koramangala Location" 
+                         style="border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); width: 100%; height: 450px; object-fit: cover;">
+                </div>
+            </div>
+
+            <!-- Location 3: Whitefield -->
+            <div class="about-grid reveal" style="margin-bottom: 100px; align-items: center;">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=80" 
+                         alt="Whitefield Location" 
+                         style="border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); width: 100%; height: 450px; object-fit: cover;">
+                </div>
+                <div style="padding-left: 20px;">
+                    <h2 style="margin-bottom: 16px;">Whitefield</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px;">Our largest café with an outdoor garden seating area. Perfect for weekend brunches, small gatherings, and pet-friendly coffee dates under the trees.</p>
+                    
+                    <div style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-location-dot" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">Phoenix Marketcity, Whitefield, Bangalore 560066</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-phone" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">+91 98765 43212</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 24px;">
+                        <i class="fa-solid fa-clock" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">Daily: 8:00 AM - 11:00 PM</span>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-dog" style="margin-right: 6px;"></i>Pet Friendly</span>
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-tree" style="margin-right: 6px;"></i>Outdoor Seating</span>
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-wifi" style="margin-right: 6px;"></i>Free WiFi</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location 4: HSR Layout -->
+            <div class="about-grid reveal" style="margin-bottom: 100px; align-items: center;">
+                <div style="padding-right: 20px; order: 1;">
+                    <h2 style="margin-bottom: 16px;">HSR Layout</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px;">Compact and cozy neighborhood café with a focus on specialty brews. Features a coffee tasting bar where you can sample different roasts and brewing methods.</p>
+                    
+                    <div style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-location-dot" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">27th Main Road, Sector 1, HSR Layout, Bangalore 560102</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-phone" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">+91 98765 43213</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 24px;">
+                        <i class="fa-solid fa-clock" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">Mon-Sat: 7:00 AM - 9:00 PM | Sun: 8:00 AM - 9:00 PM</span>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-mug-hot" style="margin-right: 6px;"></i>Tasting Bar</span>
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-wifi" style="margin-right: 6px;"></i>Free WiFi</span>
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-square-parking" style="margin-right: 6px;"></i>Parking</span>
+                    </div>
+                </div>
+                <div style="order: 2;">
+                    <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=800&q=80" 
+                         alt="HSR Location" 
+                         style="border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); width: 100%; height: 450px; object-fit: cover;">
+                </div>
+            </div>
+
+            <!-- Location 5: JP Nagar -->
+            <div class="about-grid reveal" style="margin-bottom: 60px; align-items: center;">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" 
+                         alt="JP Nagar Location" 
+                         style="border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); width: 100%; height: 450px; object-fit: cover;">
+                </div>
+                <div style="padding-left: 20px;">
+                    <span style="display: inline-block; background: #4CAF50; color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px;">NEWEST LOCATION</span>
+                    <h2 style="margin-bottom: 16px;">JP Nagar</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px;">Our newest addition featuring a sleek industrial design, live music on weekends, and a full kitchen offering fresh pastries, sandwiches, and salads.</p>
+                    
+                    <div style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-location-dot" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">BDA Complex, 4th Phase, JP Nagar, Bangalore 560078</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-phone" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">+91 98765 43214</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 24px;">
+                        <i class="fa-solid fa-clock" style="color: var(--accent-orange); width: 24px;"></i>
+                        <span style="color: var(--text-body);">Daily: 7:00 AM - 11:00 PM</span>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-music" style="margin-right: 6px;"></i>Live Music</span>
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-utensils" style="margin-right: 6px;"></i>Full Kitchen</span>
+                        <span style="background: #F5F5F5; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--text-body);"><i class="fa-solid fa-wifi" style="margin-right: 6px;"></i>Free WiFi</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: var(--bg-dark); text-align: center;">
+        <div class="container">
+            <div class="reveal">
+                <h2 style="color: white; margin-bottom: 20px;">Can't Decide Which Location?</h2>
+                <p style="color: #ccc; font-size: 1.1rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Every Vasave café promises the same exceptional coffee quality and warm hospitality. Visit the one nearest to you!</p>
+                <a href="menu.html" class="btn btn-accent" style="padding: 16px 40px; font-size: 1.05rem;">
+                    <i class="fa-solid fa-mug-hot" style="margin-right: 10px;"></i>Order Online Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="grid-4" style="margin-bottom: 50px;">
+                <div>
+                    <h3 class="footer-logo">Vasave Cafe</h3>
+                    <p style="font-size: 0.9rem;">Brewing memories, one cup at a time.</p>
+                </div>
+                <div>
+                    <h4>Links</h4>
+                    <ul style="opacity: 0.8; font-size: 0.95rem;">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="menu.html">Menu</a></li>
+                        <li class="mb-2"><a href="about.html">Our Story</a></li>
+                        <li class="mb-2"><a href="locations.html">Locations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul style="opacity: 0.8; font-size: 0.95rem;">
+                        <li class="mb-2">123 Coffee St, Bangalore</li>
+                        <li class="mb-2">hello@vasavecafe.com</li>
+                        <li class="mb-2">+91 98765 43210</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Social</h4>
+                    <div style="display: flex; gap: 16px; font-size: 1.2rem;">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center"
+                style="border-top: 1px solid #ccc; padding-top: 20px; font-size: 0.8rem; opacity: 0.6;">
+                &copy; 2024 Vasave Cafe. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

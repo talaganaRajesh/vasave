@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Vasave Cafe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container flex-between">
+            <a href="index.html" class="logo"
+                style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--primary-brown);">
+                <i class="fa-solid fa-mug-hot" style="margin-right: 8px;"></i>Vasave
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">Our Story</a>
+                <a href="locations.html">Locations</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions flex-center" style="gap: 20px;">
+                <a href="cart.html" style="position: relative; color: var(--primary-brown); font-size: 1.2rem;">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-count"
+                        style="position: absolute; top: -5px; right: -8px; background: var(--accent-orange); color: white; border-radius: 50%; width: 16px; height: 16px; font-size: 10px; display: flex; align-items: center; justify-content: center;">0</span>
+                </a>
+                <a href="menu.html" class="btn btn-primary" style="padding: 10px 24px;">Order Now</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="hamburger" style="display: none; font-size: 1.5rem; cursor: pointer;">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="margin-top: 120px; margin-bottom: 20px;">
+        <a href="menu.html" style="color: var(--text-light);"><i class="fa-solid fa-arrow-left"></i> Back to Menu</a>
+    </div>
+
+    <section class="section product-section">
+        <div class="container">
+            <div class="about-grid" id="product-detail">
+                <div class="reveal fade-in-left">
+                    <img id="detail-img" src="" alt="Product">
+                </div>
+                <div class="reveal fade-in-right">
+                    <h1 id="detail-name">Loading...</h1>
+                    <div id="detail-price" class="detail-price" style="font-size: 2rem; font-weight: 700; margin: 20px 0;">--</div>
+                    <p id="detail-desc" style="font-size: 1.1rem; line-height: 1.8;">Loading details...</p>
+
+                    <div
+                        style="margin: 30px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 20px 0;">
+                        <div style="display: flex; gap: 20px; align-items: center;">
+                            <button class="btn-outline" id="qty-minus" style="padding: 10px 20px;">-</button>
+                            <input type="number" id="qty-input" value="1"
+                                style="width: 60px; text-align: center; border: none; font-size: 1.2rem; font-weight: bold;"
+                                readonly>
+                            <button class="btn-outline" id="qty-plus" style="padding: 10px 20px;">+</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" id="add-to-cart-btn" style="width: 100%;">Add to Order</button>
+
+                    <div class="meta-row">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-clock" style="color: var(--primary-brown);"></i>
+                            <span>Prep time: 10 mins</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-leaf" style="color: var(--primary-brown);"></i>
+                            <span>Sustainably Sourced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="grid-4" style="margin-bottom: 50px;">
+                <div>
+                    <h3 class="footer-logo">Vasave Cafe</h3>
+                    <p style="font-size: 0.9rem;">Brewing memories, one cup at a time.</p>
+                </div>
+                <div>
+                    <h4>Links</h4>
+                    <ul style="opacity: 0.8; font-size: 0.95rem;">
+                        <li class="mb-2"><a href="#">Home</a></li>
+                        <li class="mb-2"><a href="#">Menu</a></li>
+                        <li class="mb-2"><a href="#">Our Story</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul style="opacity: 0.8; font-size: 0.95rem;">
+                        <li class="mb-2">123 Coffee St, Bangalore</li>
+                        <li class="mb-2">hello@vasave.com</li>
+                        <li class="mb-2">+91 98765 43210</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Social</h4>
+                    <div style="display: flex; gap: 16px; font-size: 1.2rem;">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center"
+                style="border-top: 1px solid #ccc; padding-top: 20px; font-size: 0.8rem; opacity: 0.6;">
+                &copy; 2024 Vasave Cafe. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
