@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Vasave Cafe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container flex-between">
+            <a href="index.html" class="logo"
+                style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--primary-brown);">
+                <i class="fa-solid fa-mug-hot" style="margin-right: 8px;"></i>Vasave
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">Our Story</a>
+                <a href="locations.html">Locations</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions flex-center" style="gap: 20px;">
+                <a href="cart.html" style="position: relative; color: var(--primary-brown); font-size: 1.2rem;">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-count"
+                        style="position: absolute; top: -5px; right: -8px; background: var(--accent-orange); color: white; border-radius: 50%; width: 16px; height: 16px; font-size: 10px; display: flex; align-items: center; justify-content: center;">0</span>
+                </a>
+                <span id="auth-links"></span>
+                <a href="menu.html" class="btn btn-primary" style="padding: 10px 24px;">Order Now</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="hamburger" style="display: none; font-size: 1.5rem; cursor: pointer;">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="section" style="min-height:60vh; padding-top: 140px;">
+        <div class="container" style="max-width:900px; margin: 0 auto;">
+            <div class="account-card">
+                <h2 class="text-center">Welcome Back</h2>
+                <form id="login-form" class="account-form" style="margin-top: 8px;">
+                    <input class="form-input" type="email" id="login-email" placeholder="Email" required />
+                    <input class="form-input" type="password" id="login-password" placeholder="Password" required />
+                    <button class="btn btn-primary btn-block" type="submit">Sign In</button>
+                </form>
+                <p class="text-center" style="margin-top:12px; font-size:0.95rem;">Don't have an account? <a href="signup.html">Create one</a></p>
+                <div id="login-message" class="form-message" style="text-align:center;"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center" style="padding:40px 0;">
+            &copy; 2024 Vasave Cafe
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

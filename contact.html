@@ -33,6 +33,7 @@
                     <span class="cart-count"
                         style="position: absolute; top: -5px; right: -8px; background: var(--accent-orange); color: white; border-radius: 50%; width: 16px; height: 16px; font-size: 10px; display: flex; align-items: center; justify-content: center;">0</span>
                 </a>
+                <span id="auth-links"></span>
                 <a href="menu.html" class="btn btn-primary" style="padding: 10px 24px;">Order Now</a>
             </div>
 
@@ -129,11 +130,13 @@
 
     <!-- Map Section -->
     <section class="section" style="padding: 0; background: #f5f5f5;">
-        <div style="width: 100%; height: 450px; background: linear-gradient(135deg, #E8DED3 0%, #D4C4B0 100%); display: flex; align-items: center; justify-content: center;">
-            <div style="text-align: center;">
-                <i class="fa-solid fa-map-location-dot" style="font-size: 4rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
-                <p style="color: var(--text-body); font-size: 1.1rem;">Map integration coming soon</p>
-            </div>
+        <div class="map-embed" style="height: 450px; width:100%;">
+            <iframe
+                src="https://www.google.com/maps?q=17.3616,78.4747&z=15&output=embed"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div style="text-align:center; padding: 14px 0; color:var(--text-muted); font-size:0.95rem;">
+            <strong>Charminar, Hyderabad</strong> — Visit our Hyderabad pop-up store.
         </div>
     </section>
 

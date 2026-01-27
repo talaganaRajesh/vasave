@@ -168,6 +168,7 @@ function addToCart(id, qty = 1) {
 
     localStorage.setItem('vasaveCart', JSON.stringify(cart));
     updateCartCount();
+    calculateAndRenderTotals();
 
     // Show Toast (Custom notification instead of alert)
     showToast(`${prod.name} added to cart!`);
@@ -194,6 +195,7 @@ function removeFromCart(id) {
     localStorage.setItem('vasaveCart', JSON.stringify(cart));
     renderCartPage();
     updateCartCount();
+    calculateAndRenderTotals();
 }
 
 function updateQty(id, delta) {
@@ -205,6 +207,7 @@ function updateQty(id, delta) {
             localStorage.setItem('vasaveCart', JSON.stringify(cart));
             renderCartPage();
             updateCartCount();
+            calculateAndRenderTotals();
         }
     }
 }
@@ -337,3 +340,233 @@ function setupContactForm() {
         }, 1500);
     });
 }
+
+// --- New Features: Promo, Referral, Auth, Checkout ---
+
+const promoCodes = {
+    'PROMO20': { type: 'percent', value: 20, label: '20% off' },
+    'SAVE5': { type: 'fixed', value: 5, label: '$5 off' },
+    'MORNING': { type: 'percent', value: 20, label: '20% morning special' }
+};
+
+const referralCodes = {
+    'REF10': { type: 'percent', value: 10, label: '10% off (referral)' },
+    'REF5': { type: 'fixed', value: 5, label: '$5 off (referral)' }
+};
+
+function getSubtotal() {
+    return cart.reduce((acc, it) => acc + it.price * it.quantity, 0);
+}
+
+function calculateAndRenderTotals() {
+    const subtotal = getSubtotal();
+    let discountTotal = 0;
+    let lines = [];
+
+    const appliedPromo = localStorage.getItem('vasavePromo');
+    if (appliedPromo && promoCodes[appliedPromo]) {
+        const p = promoCodes[appliedPromo];
+        let d = 0;
+        if (p.type === 'percent') d = subtotal * (p.value / 100);
+        else d = p.value;
+        discountTotal += d;
+        lines.push(`${p.label} (${appliedPromo}) - -$${d.toFixed(2)}`);
+    }
+
+    const appliedRef = localStorage.getItem('vasaveReferral');
+    if (appliedRef && referralCodes[appliedRef]) {
+        const r = referralCodes[appliedRef];
+        let d = 0;
+        if (r.type === 'percent') d = subtotal * (r.value / 100);
+        else d = r.value;
+        discountTotal += d;
+        lines.push(`${r.label} (${appliedRef}) - -$${d.toFixed(2)}`);
+    }
+
+    const final = Math.max(0, subtotal - discountTotal);
+
+    const subtotalEl = document.getElementById('cart-total');
+    const finalEl = document.getElementById('cart-final-total');
+    const discountLinesEl = document.getElementById('discount-lines');
+
+    if (subtotalEl) subtotalEl.textContent = '$' + subtotal.toFixed(2);
+    if (finalEl) finalEl.textContent = '$' + final.toFixed(2);
+    if (discountLinesEl) discountLinesEl.innerHTML = lines.map(l => `<div>${l}</div>`).join('');
+
+    // Also update checkout summary if present
+    const checkoutTotal = document.getElementById('checkout-total');
+    const checkoutSummary = document.getElementById('checkout-summary');
+    if (checkoutTotal) checkoutTotal.textContent = '$' + final.toFixed(2);
+    if (checkoutSummary) {
+        const itemsHtml = cart.map(it => `<div style="display:flex; justify-content:space-between; margin-bottom:6px;"><span>${it.name} x${it.quantity}</span><span>$${(it.price * it.quantity).toFixed(2)}</span></div>`).join('');
+        checkoutSummary.innerHTML = itemsHtml + (lines.length ? `<hr/><div style="color:var(--accent-orange);">${lines.join('<br/>')}</div>` : '');
+    }
+}
+
+function applyPromo(code) {
+    const c = code.trim().toUpperCase();
+    if (!c) return showToast('Enter promo code');
+    if (promoCodes[c]) {
+        localStorage.setItem('vasavePromo', c);
+        showToast(`Promo ${c} applied`);
+        document.getElementById('promo-message') && (document.getElementById('promo-message').textContent = `Promo ${c} applied`);
+    } else {
+        showToast('Invalid promo code');
+        document.getElementById('promo-message') && (document.getElementById('promo-message').textContent = 'Invalid promo code');
+    }
+    calculateAndRenderTotals();
+}
+
+function applyReferral(code) {
+    const c = code.trim().toUpperCase();
+    if (!c) return showToast('Enter referral code');
+    if (referralCodes[c]) {
+        localStorage.setItem('vasaveReferral', c);
+        showToast(`Referral ${c} applied`);
+        document.getElementById('promo-message') && (document.getElementById('promo-message').textContent = `Referral ${c} applied`);
+    } else {
+        showToast('Invalid referral code');
+        document.getElementById('promo-message') && (document.getElementById('promo-message').textContent = 'Invalid referral code');
+    }
+    calculateAndRenderTotals();
+}
+
+function clearCodes() {
+    localStorage.removeItem('vasavePromo');
+    localStorage.removeItem('vasaveReferral');
+    const msg = document.getElementById('promo-message');
+    if (msg) msg.textContent = '';
+    showToast('Codes cleared');
+    calculateAndRenderTotals();
+}
+
+// --- Simple Auth (demo only, client side) ---
+function updateAuthLinks() {
+    const el = document.getElementById('auth-links');
+    if (!el) return;
+    const current = JSON.parse(localStorage.getItem('vasaveCurrentUser'));
+    if (current) {
+        el.innerHTML = `<span style="margin-right:10px">Hi, ${current.name}</span><button class="btn btn-secondary" onclick="logoutUser()">Logout</button>`;
+    } else {
+        el.innerHTML = `<a href="login.html" class="btn btn-outline auth-btn">Login</a>`;
+    }
+}
+
+function signupClient(e) {
+    e.preventDefault();
+    const name = document.getElementById('signup-name').value.trim();
+    const email = document.getElementById('signup-email').value.trim().toLowerCase();
+    const pw = document.getElementById('signup-password').value;
+    const ref = document.getElementById('signup-referral') && document.getElementById('signup-referral').value.trim().toUpperCase();
+
+    let users = JSON.parse(localStorage.getItem('vasaveUsers') || '[]');
+    if (users.find(u => u.email === email)) {
+        document.getElementById('signup-message').textContent = 'Email already registered';
+        return;
+    }
+    const userRef = 'USER' + Math.floor(1000 + Math.random() * 9000);
+    const user = { name, email, password: pw, userRef };
+    users.push(user);
+    localStorage.setItem('vasaveUsers', JSON.stringify(users));
+    localStorage.setItem('vasaveCurrentUser', JSON.stringify({ name: name, email: email }));
+    if (ref && referralCodes[ref]) localStorage.setItem('vasaveReferral', ref);
+    document.getElementById('signup-message').textContent = 'Account created — redirecting...';
+    setTimeout(() => { updateAuthLinks(); window.location.href = 'index.html'; }, 1200);
+}
+
+function loginClient(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim().toLowerCase();
+    const pw = document.getElementById('login-password').value;
+    const users = JSON.parse(localStorage.getItem('vasaveUsers') || '[]');
+    const u = users.find(x => x.email === email && x.password === pw);
+    if (u) {
+        localStorage.setItem('vasaveCurrentUser', JSON.stringify({ name: u.name, email: u.email }));
+        document.getElementById('login-message').textContent = 'Logged in — redirecting...';
+        setTimeout(() => { updateAuthLinks(); window.location.href = 'index.html'; }, 900);
+    } else document.getElementById('login-message').textContent = 'Invalid credentials';
+}
+
+function logoutUser() {
+    localStorage.removeItem('vasaveCurrentUser');
+    updateAuthLinks();
+    showToast('Logged out');
+}
+
+// --- Checkout ---
+function renderCheckoutSummary() {
+    calculateAndRenderTotals();
+}
+
+function handleCheckoutSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById('ship-name').value.trim();
+    const address = document.getElementById('ship-address').value.trim();
+    const phone = document.getElementById('ship-phone').value.trim();
+    if (!name || !address || !phone) return showToast('Please fill shipping details');
+    const pay = document.querySelector('input[name="payment"]:checked').value;
+
+    // simple validation for card
+    if (pay === 'card') {
+        const num = document.getElementById('card-number').value.trim();
+        if (!num) return showToast('Enter card details');
+    }
+
+    // simulate processing
+    showToast('Processing order...');
+    setTimeout(() => {
+        showToast('Order placed — thank you!');
+        localStorage.removeItem('vasaveCart');
+        localStorage.removeItem('vasavePromo');
+        localStorage.removeItem('vasaveReferral');
+        cart = [];
+        updateCartCount();
+        setTimeout(() => window.location.href = 'index.html', 1200);
+    }, 1200);
+}
+
+// --- Event listeners for new UI ---
+document.addEventListener('DOMContentLoaded', () => {
+    updateAuthLinks();
+
+    // Promo buttons
+    const applyPromoBtn = document.getElementById('apply-promo-btn');
+    if (applyPromoBtn) applyPromoBtn.addEventListener('click', () => applyPromo(document.getElementById('promo-code-input').value));
+
+    const applyRefBtn = document.getElementById('apply-referral-btn');
+    if (applyRefBtn) applyRefBtn.addEventListener('click', () => applyReferral(document.getElementById('referral-code-input').value));
+
+    const clearBtn = document.getElementById('clear-codes-btn');
+    if (clearBtn) clearBtn.addEventListener('click', clearCodes);
+
+    // Signup / Login forms
+    const signupForm = document.getElementById('signup-form');
+    if (signupForm) signupForm.addEventListener('submit', signupClient);
+
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) loginForm.addEventListener('submit', loginClient);
+
+    // Checkout
+    const checkoutForm = document.getElementById('checkout-form');
+    if (checkoutForm) {
+        renderCheckoutSummary();
+        checkoutForm.addEventListener('submit', handleCheckoutSubmit);
+
+        // toggle card fields
+        const radios = document.querySelectorAll('input[name="payment"]');
+        radios.forEach(r => r.addEventListener('change', (e) => {
+            const cardFields = document.getElementById('card-fields');
+            if (!cardFields) return;
+            cardFields.style.display = e.target.value === 'card' ? 'block' : 'none';
+        }));
+    }
+
+    // Keep totals in sync if cart page is visible
+    if (document.getElementById('cart-items')) {
+        const savedPromo = localStorage.getItem('vasavePromo');
+        const savedRef = localStorage.getItem('vasaveReferral');
+        if (savedPromo && document.getElementById('promo-code-input')) document.getElementById('promo-code-input').value = savedPromo;
+        if (savedRef && document.getElementById('referral-code-input')) document.getElementById('referral-code-input').value = savedRef;
+        calculateAndRenderTotals();
+    }
+});
